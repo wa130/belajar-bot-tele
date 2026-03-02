@@ -35,6 +35,10 @@ try {
       console.log(`Pesan : ${text}`)
       console.log('----------------------------')
 
+      function sendMess(teks) {
+        Nass.sendMessage(msg.chat.id, teks)
+      }
+
 
       switch (command) {
         case "menu":
@@ -91,6 +95,11 @@ try {
               Nass.sendMessage(msg.chat.id, `nama   :   ${nama}\numur    : ${umur}\n${cekKedewasaan(umur)}`)
             }
 
+            break
+
+            case "tessendmess": {
+              sendMess('wokeeeh')
+            }
             break
 
         default:
