@@ -52,7 +52,7 @@ try {
              Nass.sendMessage(msg.chat.id, `id anda   :   ${msg.from.id}`)
           break
 
-          case "my":
+          case "my": {
             if (!args[0]) {
               return Nass.sendMessage(msg.chat.id, 'nama wajib di isi')
             }
@@ -66,6 +66,31 @@ try {
             const nama = args[0]
             const umur = args[1]
             Nass.sendMessage(msg.chat.id, `nama   :   ${nama}\n umur   :  ${umur}`)
+          }
+            break
+
+            case "cekkedewasaan": {
+              if (!args[0]) {
+                return Nass.sendMessage(msg.chat.id, "nama wajib di isi")
+              }
+              if (!args[1]) {
+                return Nass.sendMessage(msg.chat.id, "umur wajib di isi")
+              }
+
+
+              const nama = args[0]
+              const umur = args[1]
+              function cekKedewasaan(umur) {
+                if (umur > 18) {
+                  return "sudah dewasa"
+                } else {
+                  return 'masih kanak kanak'
+                }
+              }
+
+              Nass.sendMessage(msg.chat.id, `nama   :   ${nama}\numur    : ${umur}\n${cekKedewasaan(umur)}`)
+            }
+
             break
 
         default:
