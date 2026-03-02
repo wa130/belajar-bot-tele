@@ -1,0 +1,17 @@
+{
+  "name": "belajar-bot-tele",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Nasyuwa Sang Developer",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "json-db-engine": "^1.0.0",
+    "node-telegram-bot-api": "^0.67.0"
+  }
+}
