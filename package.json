@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Nasyuwa Sang Developer",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "dotenv": "^17.3.1",
     "json-db-engine": "^1.0.0",
     "node-telegram-bot-api": "^0.67.0"
   }
