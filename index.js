@@ -18,10 +18,16 @@ try {
       const prefix = '/'
       const username = msg.from.username
       const text = msg.text
-      const command = text.slice(1).toLowerCase()
+
+
+      if (!text.startsWith(prefix)) return
+
+      const pesan = text.slice(1).trim()
+      const args = pesan.split(" ")
+      const command = args.shift().toLowerCase()
 
       //===============================================
-      const owner =  77324772233
+      const owner =  7732477223
       const isOwner = msg.from.id === owner
 
       console.log('--------- [ PESAN ] --------')
@@ -29,7 +35,6 @@ try {
       console.log(`Pesan : ${text}`)
       console.log('----------------------------')
 
-      if (!text.startsWith(prefix)) return
 
       switch (command) {
         case "menu":
@@ -46,6 +51,22 @@ try {
           case "cekid":
              Nass.sendMessage(msg.chat.id, `id anda   :   ${msg.from.id}`)
           break
+
+          case "my":
+            if (!args[0]) {
+              return Nass.sendMessage(msg.chat.id, 'nama wajib di isi')
+            }
+
+            if (!args[1]) {
+              return Nass.sendMessage(msg.chat.id, 'umur wajib di isi')
+            }
+
+            console.log(args)
+
+            const nama = args[0]
+            const umur = args[1]
+            Nass.sendMessage(msg.chat.id, `nama   :   ${nama}\n umur   :  ${umur}`)
+            break
 
         default:
           Nass.sendMessage(msg.chat.id, "command tidak ada")
