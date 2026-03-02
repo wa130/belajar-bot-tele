@@ -20,17 +20,35 @@ try {
       const text = msg.text
       const command = text.slice(1).toLowerCase()
 
+      //===============================================
+      const owner =  77324772233
+      const isOwner = msg.from.id === owner
+
       console.log('--------- [ PESAN ] --------')
       console.log(`Dari  : ${username}`)
       console.log(`Pesan : ${text}`)
       console.log('----------------------------')
 
+      if (!text.startsWith(prefix)) return
+
       switch (command) {
         case "menu":
           Nass.sendMessage(msg.chat.id, "halo bang")
           break;
-      
+
+          case "tes":
+            if (!isOwner) {
+              return Nass.sendMessage(msg.chat.id, 'lu bukan owner')
+            }
+            Nass.sendMessage(msg.chat.id, "tes diterima")
+          break
+
+          case "cekid":
+             Nass.sendMessage(msg.chat.id, `id anda   :   ${msg.from.id}`)
+          break
+
         default:
+          Nass.sendMessage(msg.chat.id, "command tidak ada")
           break;
       }
 
